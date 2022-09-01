@@ -4,7 +4,7 @@ one:
   name: MyString
   preparation_time: 1.5
   cooking_time: 1.5
-  decription: MyText
+  description: MyText
   public: false
   user: one
 
@@ -12,6 +12,6 @@ two:
   name: MyString
   preparation_time: 1.5
   cooking_time: 1.5
-  decription: MyText
+  description: MyText
   public: false
   user: two
