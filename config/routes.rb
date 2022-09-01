@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  resources :users
-  #devise_for :users
+  devise_for :users
+
 
     resources :foods, only: %i[index new create show destroy]
     resources :recipes, only: %i[index new create show destroy] do
@@ -11,5 +11,5 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
 
-  #root 'users#index'
+  root 'users#index'
 end
