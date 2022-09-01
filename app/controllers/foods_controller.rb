@@ -29,8 +29,6 @@ class FoodsController < ApplicationController
     end
   end
 
- 
-
   # DELETE /foods/1 or /foods/1.json
   def destroy
     @food.destroy

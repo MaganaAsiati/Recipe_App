@@ -13,7 +13,6 @@ class UsersController < ApplicationController
   def new
     @user = User.new
   end
-  
 
   # POST /users or /users.json
   def create
@@ -31,7 +30,6 @@ class UsersController < ApplicationController
   end
 
   # PATCH/PUT /users/1 or /users/1.json
-  
 
   # DELETE /users/1 or /users/1.json
   def destroy
