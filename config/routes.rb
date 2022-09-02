@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       resources :recipe_foods, only: %i[new create]
     end
 
+  resources 'general_shopping_list', only: %w[index] 
   resources :public_recipes, only:%i[index new create show ]
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
