@@ -18,6 +18,7 @@ class Recipe < ApplicationRecord
       end
     end
     food_list
+    
   end
 
   def total_price(food_list)
