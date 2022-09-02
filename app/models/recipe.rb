@@ -2,7 +2,7 @@ class Recipe < ApplicationRecord
   belongs_to :user, class_name: 'User', dependent: :destroy
   has_many :recipe_foods, class_name: 'RecipeFood', foreign_key: 'recipe_id'
 
- validates :name, presence: true, length: { maximum: 50 }
+  validates :name, presence: true, length: { maximum: 50 }
   validates :preparation_time, numericality: { only_integer: true }, comparison: { greater_than_or_equal_to: 1 }
   validates :cooking_time, numericality: { only_integer: true }, comparison: { greater_than_or_equal_to: 1 }
   validates :description, presence: true, allow_blank: true
