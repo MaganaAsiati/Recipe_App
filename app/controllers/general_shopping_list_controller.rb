@@ -1,4 +1,6 @@
 class GeneralShoppingListController < ApplicationController
+  # rubocop:disable Metrics
+
   def index
     @food_amount = 0
     @total_price = 0
