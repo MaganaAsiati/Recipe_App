@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'public_recipes/index'
+  get 'public_recipes/show'
   devise_for :users
 
 
@@ -6,6 +8,8 @@ Rails.application.routes.draw do
     resources :recipes, only: %i[index new create show destroy] do
       resources :recipe_foods, only: %i[new create]
     end
+
+    resources :public_recipes, only:%i[index new create show ]
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
