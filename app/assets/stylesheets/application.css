@@ -76,7 +76,8 @@
 }
 
 .name-recipe > * {
-margin-bottom: 30px;}
+  margin-bottom: 30px;
+}
 
 .recipe-buttons {
   width: 80%;
