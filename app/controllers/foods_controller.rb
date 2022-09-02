@@ -1,6 +1,5 @@
 class FoodsController < ApplicationController
-  before_action :set_food, only: %i[show edit update destroy]
-
+ load_and_authorize_resource 
   # GET /foods or /foods.json
   def index
     @foods = Food.all
@@ -31,17 +30,19 @@ class FoodsController < ApplicationController
 
   # DELETE /foods/1 or /foods/1.json
   def destroy
-    @food = Food.find_by(id: params[:id])
-    if food.present?
-      if food.destroy
+    food = Food.find(params[:id])
+    # if @food.present?
+      if food.destroy!
         flash[:notice] = 'Food was successfully deleted'
+        redirect_to foods_path
       else
+
         flash[:alert] = 'Food was not deleted, please try again later.'
       end
-    else
-      flash[:alert] = 'Food was not found, please try again later.'
-    end
-    redirect_to foods_path
+    # else
+    #   flash[:alert] = 'Food was not found, please try again later.'
+    # end
+    
   end
 
   private
