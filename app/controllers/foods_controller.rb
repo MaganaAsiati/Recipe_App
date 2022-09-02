@@ -31,8 +31,7 @@ class FoodsController < ApplicationController
 
   # DELETE /foods/1 or /foods/1.json
   def destroy
-    user = current_user
-    food = Food.find_by(id: params[:id])
+    @food = Food.find_by(id: params[:id])
     if food.present?
       if food.destroy
         flash[:notice] = 'Food was successfully deleted'
