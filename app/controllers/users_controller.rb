@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-
   # GET /users or /users.json
   def index
     @users = User.all
@@ -29,8 +28,6 @@ class UsersController < ApplicationController
   end
 
   # PATCH/PUT /users/1 or /users/1.json
-
-  
 
   private
 
