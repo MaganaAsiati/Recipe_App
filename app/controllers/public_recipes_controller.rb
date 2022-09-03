@@ -1,10 +1,11 @@
 class PublicRecipesController < ApplicationController
   def index
-    @recipes = Recipe.includes(:user).where(public: true).where.not(user_id: current_user.id).order(created_at: :desc) 
+    @recipes = Recipe.includes(:user).where(public: true).where.not(user_id: current_user.id).order(created_at: :desc)
     @recipes_len = @recipes.size
     @public_recipes = []
 
     return if @recipes.empty?
+
     @recipes.each do |recipe|
       recipe_food = RecipeFood.where(recipe_id: recipe.id)
       next if recipe_food.empty?
@@ -22,7 +23,6 @@ class PublicRecipesController < ApplicationController
       }
       @public_recipes << public_recipe
       p @public_recipes
-      
-    end 
+    end
   end
 end
