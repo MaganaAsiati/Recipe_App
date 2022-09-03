@@ -30,18 +30,19 @@
             </div>
           </button>
         </li>
-        # <li class="nav-item">
-        #   <button class="btn btn-dark">
-        #    <div class="d-flex flex-row">
-        #    <%= heroicon "speakerphone", options: { class: "nav-i" }  %>
-      
-        #     </div>
-        #   </button>
+        <li class="nav-item">
+          <button class="btn btn-dark">
+           <div class="d-flex flex-row">
+           <%= heroicon "speakerphone", options: { class: "nav-i" }  %>
+            <%= link_to 'public Recipes', public_recipes_path, class: "nav-link" %>
+            </div>
+          </button>
         </li>
         <li class="nav-item">
           <button class="btn btn-dark">
            <div class="d-flex flex-row">
           <%= heroicon "shopping-cart", options: { class: "nav-i" }  %>
+            <%= link_to 'Shoping List', shopping_lists_path, class: "nav-link" %>
             </div>
           </button>
         </li>

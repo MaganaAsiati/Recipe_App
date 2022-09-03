@@ -1,26 +1,34 @@
-<h1>Public Recipes</h1>
-<p>Here you can find all of the public recipes</p>
-<div class="d-flex justify-content-center flex-column mt-5">
-  <% @all_public_recipes.each do |recipe|%>
-    <div class="card border-secondary mb-3 w-100" >
-      <div class="card-header  d-flex justify-content-between">
+
+
+
+<div>
+  <div>
+    <h5>Public Recipes</h5>
+  </div>
+  <div>
+    <% if @public_recipes.empty? %>
+      <h5>Sorry we don't have any public recipe ! Only recipes with ingredients or foods are visible here.</h5>
+      <% else %>
+      <% @public_recipes.each do |recipe| %>
         <div>
-          Recipe#<b><%= recipe.id %></b> by <b><%= recipe.user.email %></b></div>
-        <p><%= distance_of_time_in_words(recipe.created_at, DateTime.now) %></p>
-      </div>
-      <div class="card-body text-secondary">
-        <h5 class="card-title"><%= recipe.name %></h5>
-        <p class="card-text"><%=h truncate(recipe.description, :length => 160) %></p>
-      </div>
-      <div class="card-footer d-flex  align-items-center justify-content-between">
-        <div class=" d-flex align-items-center justify-content-center px-4 ">
-          <span class="badge badge-dark bg-dark m-1">Total food items: <%= recipe.getfoods(recipe.id).count %></span>
-          <span class="badge badge-success bg-success m-1">Total price: 
-            <%=  recipe.total_price(recipe.getfoods(recipe.id)) %>$
-          </span>
+          <div>
+            <div>
+              <%= link_to recipe_path(recipe[:id]), method: :get, class: "nav-link" do %>
+                <h5>
+                  <%= recipe[:recipe_name] %>
+                </h5>
+              <% end %>
+            </div>
+            <div>
+              <h5>By <%= recipe[:author].name %></h5>
+            </div>
+          </div>
+          <div>
+            <h5>Total food items : <%= recipe[:food_items] %> </h5>
+            <h5>Total price : $ <%= recipe[:total_price] %></h5>
+          </div>
         </div>
-        <%= link_to raw('<i class=\"fa-solid fa-trash-can"\></i> More Details'),recipe_path(recipe.id),:class => "btn btn-sm btn-primary" %>
-      </div>
-    </div>
-  <% end %>
+      <% end %>
+    <% end %>
+  </div>
 </div>
