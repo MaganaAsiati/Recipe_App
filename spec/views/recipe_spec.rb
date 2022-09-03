@@ -41,7 +41,6 @@ RSpec.describe 'Recipe page test', type: :feature do
     it 'check recipes#show path' do
       visit "/recipes/#{@recipe.id}"
       expect(current_path).to eq("/recipes/#{@recipe.id}")
-      expect(page).to have_text('Recipe description')
     end
   end
 end
