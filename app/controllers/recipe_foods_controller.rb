@@ -1,41 +1,45 @@
 class RecipeFoodsController < ApplicationController
   before_action :set_recipe_food, only: %i[show edit update destroy]
 
-  # GET /recipe_foods or /recipe_foods.json
+  # GET /recipes_foods or /recipes_foods.json
   def index
-    @foods = Food.all
     @recipe_foods = RecipeFood.all
   end
 
-  # GET /recipe_foods/1 or /recipe_foods/1.json
+  # GET /recipes_foods/1 or /recipes_foods/1.json
   def show; end
 
-  # GET /recipe_foods/new
+  # GET /recipes_foods/new
   def new
     @recipe_food = RecipeFood.new
+    @recipe = Recipe.find(params[:recipe_id])
+    @foods = Food.where(user_id: current_user.id)
   end
 
-  # POST /recipe_foods or /recipe_foods.json
+  # POST /recipes_foods or /recipes_foods.json
   def create
-    @recipe_food = RecipeFood.new(recipe_food_params)
+    @foods = Food.where(user_id: current_user.id)
+    @food = Food.find(recipe_food_params['food'])
+    @recipe = Recipe.find(params[:recipe_id])
+    @recipe_food = RecipeFood.new(quantity: recipe_food_params['quantity'].to_i, food: @food, recipe: @recipe)
 
     respond_to do |format|
       if @recipe_food.save
-        format.html { redirect_to recipe_food_url(@recipe_food), notice: 'Recipe food was successfully created.' }
-        format.json { render :show, status: :created, location: @recipe_food }
+        format.html { redirect_to recipes_path, notice: 'Recipes food was successfully created.' }
+        format.json { render :show, status: :created, location: @recipes_foods }
       else
         format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @recipe_food.errors, status: :unprocessable_entity }
+        format.json { render json: @recipes_food.errors, status: :unprocessable_entity }
       end
     end
   end
 
-  # DELETE /recipe_foods/1 or /recipe_foods/1.json
+  # DELETE /recipes_foods/1 or /recipes_foods/1.json
   def destroy
     @recipe_food.destroy
 
     respond_to do |format|
-      format.html { redirect_to recipe_foods_url, notice: 'Recipe food was successfully destroyed.' }
+      format.html { redirect_to recipesFoods_url, notice: 'Recipes food was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -44,11 +48,11 @@ class RecipeFoodsController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_recipe_food
-    @recipe_food = RecipeFood.find(params[:id])
+    @recipe_food = RecipesFood.find(params[:id])
   end
 
   # Only allow a list of trusted parameters through.
   def recipe_food_params
-    params.require(:recipe_food).permit(:quantity, :recipe_id, :food_id)
+    params.require(:recipe_food).permit(:food, :quantity)
   end
 end
