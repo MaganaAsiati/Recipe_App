@@ -14,6 +14,24 @@
  *= require_self
  */
 
+body {
+  background-image: url("food.png");
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.bottom-link {
+  margin-left: 45%;
+}
+
+.nav-i {
+  width: 20px;
+}
+
+.add_ing {
+  float: right;
+}
+
 .food-l {
   display: grid;
   grid-template-columns: 1fr 3fr;

@@ -74,7 +74,7 @@ GEM
     bootsnap (1.13.0)
       msgpack (~> 1.2)
     builder (3.2.4)
-    cancancan (1.17.0)
+    cancancan (3.4.0)
     capybara (3.37.1)
       addressable
       matrix
@@ -100,6 +100,8 @@ GEM
     erubi (1.11.0)
     globalid (1.0.0)
       activesupport (>= 5.0)
+    heroicon (0.4.0)
+      rails (>= 5.2)
     i18n (1.12.0)
       concurrent-ruby (~> 1.0)
     importmap-rails (1.1.5)
@@ -249,10 +251,11 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap
-  cancancan (~> 1.9)
+  cancancan
   capybara
   debug
   devise
+  heroicon
   importmap-rails
   jbuilder
   pg (~> 1.1)
