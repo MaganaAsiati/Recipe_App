@@ -19,6 +19,11 @@ To get a local copy up and running follow these simple example steps.
   - run `npm install` in your terminal
   - run `rails s` in your terminal
 
+## View
+
+![image](https://user-images.githubusercontent.com/95297251/208779480-fd9866ab-d318-46c6-ab53-50a8ea0cc1eb.png)
+
+
 ## Authors
 
 👤 **Assiati**
