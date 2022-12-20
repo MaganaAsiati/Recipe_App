@@ -1,61 +1,55 @@
-# ![](https://img.shields.io/badge/Microverse-blueviolet) Blog-App
-> **The Blog is a classic example of a blog website. The goal is to create a fully functional website that will show the list of posts and empower readers to interact with them by adding comments and liking posts.**
+![](https://img.shields.io/badge/Microverse-blueviolet)
 
-## Built With
+# Recipe App
 
-- Ruby on Rails
-- Ruby
-
-### Prerequisites
-
-- [Ruby](https://www.ruby-lang.org/en/)
-- [Rails & Postgres](https://www.howtoforge.com/tutorial/ubuntu-ruby-on-rails/?fbclid=IwAR3G0lCOxctwwOCAXmJKAma8p-IciYv2qwwRUyOX-pULaB_7lmrGgMMK8G4)
-
-## Install
-
-- Ruby
-- Ruby on Rails(as a gem)
-- Postgresql database
+The Recipe app keeps track of all your recipes and ingredients. It will allow you to save ingredients, keep track of what you have, create recipes. Also, since sharing recipes is an important part of cooking the app should allow you to make them public so anyone can access them.
 
 ## Getting Started
 
-To get a local copy of the app, run the following commands in your terminal:
-- `git clone https://github.com/MaganaAsiati/Blog_app.git`
-- `cd /Blog_app.git`
-- `bundle install`
+To get a local copy up and running follow these simple example steps.
 
-Run the following commands to run the app
+- Copy this link `https://github.com/MaganaAsiati/Recipe_App`.
+- Get the directory that you want to clone the repository.
+- Open the command prompt in this directory.
+- Write `https://github.com/MaganaAsiati/Recipe_App`.
+- Go to the repository folder in your command prompt `cd Recipe_App`.
 
-- `rails db:create`
-- `rails db:migrate`
-- `rails s`
+- Follow these steps to run the app:
+  - run `bundle install` in your terminal
+  - run `npm install` in your terminal
+  - run `rails s` in your terminal
 
-In your browser, go to
+## View
 
-- `http://localhost:3000`
-
-## Testing
-- To install rspec: gem install rspec
-- To run all the tests: rspec ./spec
+![image](https://user-images.githubusercontent.com/95297251/208779480-fd9866ab-d318-46c6-ab53-50a8ea0cc1eb.png)
 
 
 ## Authors
 
-👤 **Magana Mwinja Asiati**
+👤 **Assiati**
 
 - GitHub: [@MaganaAsiati ](https://github.com/MaganaAsiati)
 - Twitter: [@asia_magana](https://twitter.com/asia_magana)
 - LinkedIn: [Asia Magana](https://www.linkedin.com/in/asia-magana-60b451200/)
+
+👤 **Patrick**
+
+- GitHub: [@Patrick](https://github.com/Pazzo97)
+- Twitter: [@Patrick](https://twitter.com/mukunzipat)
+- LinkedIn: [Patrick](https://www.linkedin.com/in/patrick-mukunzi/)
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/aimalamiri/Ruby-Catalog/issues).
+Feel free to check the [issues page](https://github.com/MaganaAsiati/Recipe_App/issues).
 
 ## Show your support
 
 Give a ⭐️ if you like this project!
 
-## 📝 License
+## Acknowledgments
 
-This project is [MIT](./MIT.md) licensed. 
+- Hat tip to anyone whose code was used
+- Inspiration
+- etc
